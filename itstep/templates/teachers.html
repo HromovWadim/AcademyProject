@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Преподаватели</title>
+</head>
+<body>
+<h1>Список преподавателей</h1>
+    <ul>
+        {% for teacher in teachers %}
+            <li>{{ teacher.first_name }} {{ teacher.last_name }} — {{ teacher.email }} ({{ teacher.phone }})</li>
+        {% empty %}
+
+        {% endfor %}
+    </ul>
+</body>
+</html>

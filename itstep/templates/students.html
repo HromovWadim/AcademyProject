@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Студенты</title>
+</head>
+<body>
+ <h1>Список студентов</h1>
+    <ul>
+        {% for student in students %}
+            <li>
+                {{ student.first_name }} {{ student.last_name }} — {{ student.email }} <br>
+                Курсы:
+                {% for c in student.course.all %}
+                    "{{ c.name }}"{% if not forloop.last %}, {% endif %}
+                {% empty %}
+</li>
+                {% endfor %}
+    </ul>
+</body>
+</html>

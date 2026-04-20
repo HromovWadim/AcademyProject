@@ -15,8 +15,8 @@ class Teacher(models.Model):
         return self.first_name
 
     class Meta:
-          verbose_name = 'Преподователь'
-          verbose_name_plural = 'Преподователи'
+          verbose_name = 'Преподаватель'
+          verbose_name_plural = 'Преподаватели'
 
 
 class Course(models.Model):
@@ -39,7 +39,7 @@ class Student(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField()
-    phone = models.CharField()
+    phone = models.CharField(max_length=20)
     url = models.URLField()
     date_of_birth = models.DateField()
     course = models.ManyToManyField(Course)
